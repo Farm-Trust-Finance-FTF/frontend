@@ -9,7 +9,7 @@
 }
 
 @layer components {
-  .container {
+  .padding {
     @apply lg:px-16 px-5 w-full;
   }
 }

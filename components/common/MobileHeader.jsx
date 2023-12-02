@@ -11,7 +11,7 @@ function MobileHeader() {
   const router = useRouter()
   return (
     <>
-      <header className='lg:hidden container pt-5'>
+      <header className='lg:hidden padding pt-5'>
         <nav className='w-full'>
           <div className='flex justify-between'>
             {/* Logo and search bar */}

@@ -7,7 +7,7 @@ function BaseLayout({ children }) {
     <>
       <Navbar />
       <MobileHeader />
-      <main className="container">{ children }</main>
+      <main className="padding">{ children }</main>
       <Footer />
     </>
   )
