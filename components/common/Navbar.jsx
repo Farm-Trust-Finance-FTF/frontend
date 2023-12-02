@@ -4,7 +4,7 @@ import ConnectWallet from './ConnectWallet'
 
 function Navbar() {
   return (
-    <nav className='hidden container text-[#141414] mt-5 lg:flex justify-between items-center'>
+    <nav className='hidden padding text-[#141414] mt-5 lg:flex justify-between items-center'>
       <Logo />
       <div className='flex space-x-5 cursor-pointer font-bold'>
         <h1>About</h1>
