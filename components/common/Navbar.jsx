@@ -12,6 +12,7 @@ function Navbar() {
         <h1>Contact</h1>
         <Link href="lending-and-borrowing">Lending</Link>
         <Link href="parametric-insurance">Insurance</Link>
+        <Link href="asset-bridge">Asset Bridge</Link>
         <Link href="team">Team</Link>
       </div>
       <ConnectWallet />
