@@ -1,11 +1,11 @@
-import React from "react";
+import BaseLayout from "layout/Base";
 import SendMessage from "../../components/lending/SendMessage";
 
 const sendMessage = () => {
   return (
-    <div>
+    <BaseLayout>
       <SendMessage />
-    </div>
+    </BaseLayout>
   );
 };
 
