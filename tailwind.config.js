@@ -10,7 +10,7 @@ module.exports = {
       fontFamily: {
         orbi: ['Orbitron', 'sans-serif'],
         pop: ['Poppins', 'sans-serif'],
-
+        fira: ['Fira Code', 'monospace']
       }
     },
   },

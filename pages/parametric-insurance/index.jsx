@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 import BaseLayout from "layout/Base";
 import ModalComp from "../../components/ModalComp";
+import { packages } from "../../utils/packages";
 
 const index = () => {
   const [isRegister, setRegister] = useState(false)
@@ -42,9 +44,36 @@ const index = () => {
               </form>
             </>
           )
-
           }
         </ModalComp>
+      </section>
+
+      <section className="mt-20">
+          <div class="grid grid-cols-3 gap-4">
+            {packages.map((pac, i) => (
+              <div className="border rounded-xl">
+                <div className={`bg-[${pac.color}] text-center text-white rounded-t-xl`} >
+                  <h1 className="font-fira text-[32px]">{pac.name}</h1>
+                </div>
+                <div className="py-8 px-10 ">
+                  <p className="text-[20px]">{pac.desc}</p>
+                  <h2 className="font-fira text-[32px] font-bold">${pac.amount}</h2>
+                  <p className="mb-12">{pac.text}</p>
+                  <hr />
+
+                  <h3 className="font-bold text-[20px] mt-12">What’s Include?</h3>
+
+                  <ul>
+                    {pac.includes.map(item => (
+                      <li className="pt-4">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
       </section>
     </BaseLayout>
   );
