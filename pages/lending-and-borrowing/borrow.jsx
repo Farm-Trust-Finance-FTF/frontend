@@ -1,13 +1,13 @@
-import React from "react";
+import BaseLayout from "layout/Base";
 import Borrow from "../../components/lending/Borrow";
 
 const borrow = () => {
-    return <div>
+    return (
+      <BaseLayout>
       
-        
-<Borrow/>
-
-  </div>;
+        <Borrow/>
+      </BaseLayout>
+    )
 };
 
 export default borrow;

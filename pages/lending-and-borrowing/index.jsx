@@ -1,11 +1,13 @@
-import React from "react";
 import Link from "next/link";
+
+import BaseLayout from "layout/Base";
 import Footer from "../../components/common/Footer";
 
 const index = () => {
   return (
-    <>
-      <div className="shadow-2xl p-6">
+    <BaseLayout>
+    
+      <div className="shadow-2xl p-6 mt-5">
         <h1 className=" flex text-xl font-bold mt-14 items-center justify-center">
           {" "}
           Lend and Borrow Tokens Using ChainLink CCIP
@@ -55,9 +57,7 @@ const index = () => {
           </Link>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </BaseLayout>
   );
 };
 
