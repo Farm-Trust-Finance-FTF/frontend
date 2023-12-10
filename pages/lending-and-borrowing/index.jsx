@@ -13,7 +13,7 @@ const index = () => {
           Lend and Borrow Tokens Using ChainLink CCIP
         </h1>
 
-        <div className="lg:flex space-y-5 items-center justify-center mt-10 gap-4 py-10">
+        <div className="lg:flex space-y-5 lg:space-y-0 items-center justify-center mt-10 gap-4 py-10">
           <div>
           <Link
             href="lending-and-borrowing/depositToken"
