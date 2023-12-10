@@ -49,7 +49,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: "FarmTrustFinance",
-  projectId: "1q0S1Io7KIpu9gUvwhwXVZEmO5lvYMga",
+  projectId: "4c0ff852eb2c84659a24b7d7c8335bc1",
   chains,
 });
 

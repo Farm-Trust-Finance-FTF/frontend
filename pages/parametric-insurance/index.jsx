@@ -6,7 +6,38 @@ import { packages } from "../../utils/packages";
 
 const index = () => {
   const [isRegister, setRegister] = useState(false)
+  const [sent, setSent] = useState(false)
   const [isFrom, setForm] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [location, setLocation] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+
+  const sendMsg = async (e) => {
+    e.preventDefault();
+    if (!name.length || !email.length || !location.length || !subject.length || !message.length) {
+      return
+    }
+
+    
+    const payload = {
+      name,
+      email,
+      subject: `FTF - ${subject}`,
+      message
+    }
+
+    const response = await fetch('https://formsubmit.co/ajax/kingifean@gmail.com', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload) // body data type must match "Content-Type" header
+      });
+
+    setSent(true)
+  }
   return (
     <BaseLayout>
       <section className="mt-10">
@@ -25,22 +56,22 @@ const index = () => {
             <>
               <form>
                 <div>
-                  <input type="text" placeholder="Name" className="border p-4 border-[#316721] rounded-lg" />
+                  <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" className="border p-4 border-[#316721] rounded-lg" required />
                 </div>
                 <div className="mt-3">
-                  <input type="email" placeholder="Email" className="border p-4 border-[#316721] rounded-lg" />
+                  <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className="border p-4 border-[#316721] rounded-lg" required />
                 </div>
                 <div className="mt-3">
-                  <input type="text" placeholder="Location" className="border p-4 border-[#316721] rounded-lg" />
+                  <input value={location} onChange={(e) => setLocation(e.target.value)} type="text" placeholder="Location" className="border p-4 border-[#316721] rounded-lg" required />
                 </div>
                 <div className="mt-3">
-                  <input type="text" placeholder="Subject" className="border p-4 border-[#316721] rounded-lg" />
+                  <input value={subject} onChange={(e) => setSubject(e.target.value)} type="text" placeholder="Subject" className="border p-4 border-[#316721] rounded-lg" required />
                 </div>
                 <div className="mt-3">
                   {/* <input type="text" placeholder="Subject" /> */}
-                  <textarea name="" id="" cols="21" rows="5" placeholder="Message" className="border p-4 border-[#316721] rounded-lg" ></textarea>
+                  <textarea value={message} onChange={(e) => setMessage(e.target.value)} name="" id="" cols="21" rows="5" placeholder="Message" className="border p-4 border-[#316721] rounded-lg" required ></textarea>
                 </div>
-                <button  className="border border-[#316721] text-[#316721] mt-5 px-5 py-3 rounded-3xl">Send message</button> 
+                <button disabled={sent} type="submit" onClick={(e) => sendMsg(e)} className="border border-[#316721] text-[#316721] mt-5 px-5 py-3 rounded-3xl">{sent ? 'Message sent' : 'Send message'}</button>
               </form>
             </>
           )
