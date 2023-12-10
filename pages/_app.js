@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
@@ -62,7 +63,10 @@ const wagmiConfig = createConfig({
 
 function App({ Component, pageProps }) {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Insurance for Farmers</title>
+      </Head>
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           chains={chains}
@@ -77,7 +81,7 @@ function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </RainbowKitProvider>
       </WagmiConfig>
-    </div>
+    </>
   );
 }
 

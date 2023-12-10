@@ -1,15 +1,15 @@
-import React from 'react'
+import BaseLayout from "layout/Base";
 import WIthdrawToken from '../../components/lending/WithdrawToken'
 
 const withdrawToken = () => {
   return (
-      <div>
+      <BaseLayout>
           
 
 <WIthdrawToken/>
 
 
-    </div>
+    </BaseLayout>
   )
 }
 

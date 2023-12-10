@@ -40,7 +40,7 @@ const SendMessage = () => {
     <div>
       <form
         action=""
-        className="flex  mt-20 flex-col w-1/2  justify-center mx-auto shadow-xl p-10"
+        className="flex  mt-20 flex-col lg:w-1/2  justify-center mx-auto shadow-xl p-10"
         onSubmit={handleSendMessage}
       >
         <div className="space-y-4">

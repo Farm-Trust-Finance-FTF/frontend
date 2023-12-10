@@ -1,11 +1,11 @@
-import React from "react";
+import BaseLayout from "layout/Base";
 import Repay from "../../components/lending/Repay";
 
 const repay = () => {
   return (
-    <div>
+    <BaseLayout>
       <Repay />
-    </div>
+    </BaseLayout>
   );
 };
 

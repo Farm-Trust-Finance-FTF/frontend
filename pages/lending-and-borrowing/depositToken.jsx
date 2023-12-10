@@ -1,11 +1,11 @@
-import React from "react";
+import BaseLayout from "layout/Base";
 import DepositToken from "../../components/lending/DepositToken";
 
 const depositToken = () => {
   return (
-    <div>
+    <BaseLayout>
       <DepositToken />
-    </div>
+    </BaseLayout>
   );
 };
 
