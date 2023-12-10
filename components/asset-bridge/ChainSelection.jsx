@@ -27,8 +27,6 @@ const ChainSelection = () => {
   useEffect(() => {
     const endpoint = "live";
     const accessKey = process.env.NEXT_PUBLIC_EXCHANGE_RATE_ACCESS_KEY;
-    console.log(conversionResult);
-    console.log("Acce", accessKey);
 
     const fetchData = async () => {
       try {
@@ -48,7 +46,6 @@ const ChainSelection = () => {
         const response = await axios.get(
           `http://api.coinlayer.com/api/${endpoint}?access_key=${accessKey}&from=${selectedOptions.payCoin?.tag}&to=${selectedOptions.receiveCoin?.tag}&amount=${pay}`
         );
-        console.log(response.data);
 
         const exchangeRates = response.data.rates;
         let receiveRate;
