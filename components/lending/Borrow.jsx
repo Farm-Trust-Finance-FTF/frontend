@@ -4,14 +4,14 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction,
 } from "wagmi";
-import { LendingBorrowingABI, LendingBorrowing_ADDRESS } from "../../constants";
+import { FTFProtocolABI, FTFProtocol_ADDRESS } from "../../constants";
 
 const Borrow = () => {
   const [messageId, setMessageId] = useState();
 
   const { config: BorrowConfig } = usePrepareContractWrite({
-    address: LendingBorrowing_ADDRESS,
-    abi: LendingBorrowingABI,
+    address: FTFProtocol_ADDRESS,
+    abi: FTFProtocolABI,
     functionName: "borrowUSDC",
     args: [messageId],
   });
