@@ -7,7 +7,9 @@ function Navbar() {
   const router = useRouter()
   return (
     <nav className="hidden padding text-[#141414] mt-5 lg:flex justify-between items-center ">
-      <Logo />
+      <Link href="/">
+        <Logo />
+      </Link>
       <div className="flex space-x-10 cursor-pointer font-bold ">
         <h1>About</h1>
         <h1>Contact</h1>

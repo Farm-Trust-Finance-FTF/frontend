@@ -31,6 +31,17 @@ function MobileHeader() {
         <div className='fixed h-[100vh] z-10 bg-white w-full px-5 py-2 transition-all'>
         
         <div className='space-x-4 pt-4'>
+          <div className="block cursor-pointer font-bold pb-5 ">
+          <h1>About</h1>
+          <h1>Contact</h1>
+          <Link className={router.pathname.includes('lending-and-borrowing') ? 'border-b-2 border-[#87C232]' : ''} href="lending-and-borrowing">Lending</Link>
+          <br />
+          <Link className={router.pathname.includes('parametric-insurance') ? 'border-b-2 border-[#87C232]' : ''} href="parametric-insurance">Insurance</Link>
+          <br />
+          <Link className={router.pathname.includes('asset-bridge') ? 'border-b-2 border-[#87C232]' : ''} href="asset-bridge">Asset Bridge</Link>
+          <br />
+          <Link className={router.pathname.includes('team') ? 'border-b-2 border-[#87C232]' : ''} href="team">Team</Link>
+        </div>
             <ConnectWallet />
           </div>
       </div>
