@@ -11,6 +11,7 @@ import BaseLayout from "layout/Base";
 
 import insuranceAbi from '../../constants/insurance.json'
 import { admins } from "../../utils/admins"
+import ModalComp from "../../components/ModalComp";
 
 function Admin() {
   const { address } = useAccount()
@@ -23,7 +24,7 @@ function Admin() {
   const router = useRouter()
 
   const { config } = usePrepareContractWrite({
-    address: '0xe784a4a9de1f822E836B7Ccc13bd70ba03fdA258',
+    address: '0xead9d06d89aecf6e9d1cf794edd5e62ca11444ec',
     abi: insuranceAbi,
     functionName: 'newContract',
     args: [farmer, parseInt(duration), parseInt(premium), parseInt(payout), location]
@@ -31,7 +32,7 @@ function Admin() {
 
   const { write, isError, data } = useContractWrite(config)
 
-  const { isLoading, isSuccess } = useWaitForTransaction({
+  const { isLoading, isSuccess, } = useWaitForTransaction({
     hash: data?.hash,
   })
 
@@ -41,12 +42,15 @@ function Admin() {
     write?.()
   }
 
-
+  const [ modal, setModal ] = useState()
   useEffect(() => {
     if(!admins.includes(address)){
       router.push('/')
     }
-  }, [])
+    if (isSuccess) {
+      setModal(true)
+    }
+  }, [isSuccess])
 
   return (
     <BaseLayout>
@@ -146,21 +150,40 @@ function Admin() {
           </div>
           
         </div>
-        <button
+        { isLoading && <button
+          type="submit"
+          disabled={isLoading}
+          className="bg-[#316721] mt-10  px-4 py-2 text-white font-semibold text-xl rounded-full"
+        >
+          Creating contract...
+        </button> }
+        { isSuccess && <button
+          type="submit"
+          disabled={isSuccess}
+          className="bg-[#316721] mt-10  px-4 py-2 text-white font-semibold text-xl rounded-full"
+        >
+          Contract created......
+        </button> }
+
+        { !isSuccess && <button
           type="submit"
           className="bg-[#316721] mt-10  px-4 py-2 text-white font-semibold text-xl rounded-full"
         >
           Create
-        </button>
-        <article className="mt-4 text-sm">
-          {isLoading && <p>Creating contract...</p>}
+        </button> }
 
-          {isSuccess && <p>Contract created...</p>}
 
-          {isError && (
-            <p>There is an Error in Creating contract...</p>
-          )}
-        </article>
+        <ModalComp XIcon={true} isOpen={modal} onClose={() => setModal(false)} styling="w-[400px] md:w-[680px] pb-[10px] text-center">
+          <img src='/icons/insure.svg' className='m-auto'  />
+            <p className="font-bold text-[18px] px-10 py-5">Thank you for creating a new Parametric insurance contract</p>
+
+            <p>Transaction -ID</p>
+
+            <p className="py-5">{data?.hash}</p>
+
+            <a className="text-[#316721] font-bold"  href={`https://sepolia.etherscan.io/tx/${data?.hash}`} target="_blank" rel="noopener noreferrer">View TX</a>
+            
+        </ModalComp>
       </form>
     </div>
     </BaseLayout>

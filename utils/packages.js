@@ -1,7 +1,7 @@
 export const packages = [
   {
-    name: 'Golden',
-    desc: 'Golden assurerance',
+    name: 'Gold',
+    desc: 'Gold assurerance',
     amount: 200,
     text: 'Annualy',
     includes: [

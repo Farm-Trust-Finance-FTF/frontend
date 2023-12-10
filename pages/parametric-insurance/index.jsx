@@ -80,10 +80,10 @@ const index = () => {
       </section>
 
       <section className="mt-20">
-          <div class="lg:grid space-y-5 grid-cols-3 gap-4">
+          <div class="lg:grid space-y-5 lg:space-y-0 grid-cols-3 gap-4">
             {packages.map((pac, i) => (
               <div className="border rounded-xl">
-                <div className={` ${pac.name === 'Golden' ? 'bg-[#935216]' : pac.name === 'Platinum' ? 'bg-[#163D76]' : 'bg-[#049793]'} text-center text-white rounded-t-xl`} >
+                <div className={` ${pac.name === 'Gold' ? 'bg-[#935216]' : pac.name === 'Platinum' ? 'bg-[#163D76]' : 'bg-[#049793]'} text-center text-white rounded-t-xl`} >
                   <h1 className="font-fira text-[32px]">{pac.name}</h1>
                 </div>
                 <div className="py-8 px-10 ">

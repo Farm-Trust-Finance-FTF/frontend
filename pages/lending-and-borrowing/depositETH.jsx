@@ -1,10 +1,10 @@
 import BaseLayout from "layout/Base";
-import DepositETH from "../../components/lending/DepositETH";
+// import DepositETH from "../../components/lending/DepositETH";
 
 const depositETH = () => {
   return (
     <BaseLayout>
-      <DepositETH />
+      {/* <DepositETH /> */}
     </BaseLayout>
   );
 };
