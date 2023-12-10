@@ -4,15 +4,15 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction,
 } from "wagmi";
-import { LendingBorrowingABI, LendingBorrowing_ADDRESS } from "../../constants";
+import { FTFSenderABI, FTFSender_ADDRESS } from "../../constants";
 
 const DepositToken = () => {
   const [token, setToken] = useState();
   const [amount, setAmount] = useState();
 
   const { config: depositTokenConfig } = usePrepareContractWrite({
-    address: LendingBorrowing_ADDRESS,
-    abi: LendingBorrowingABI,
+    address: FTFSender_ADDRESS,
+    abi: FTFSenderABI,
     functionName: "depositToken",
     args: [token, amount],
   });
