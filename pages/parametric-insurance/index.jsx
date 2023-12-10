@@ -47,7 +47,7 @@ const index = () => {
             <>
               <img src='/icons/insure.svg' className='m-auto'  />
               <h1 className="text-[32px] font-bold my-5">Register Insurance</h1>
-              <p className="text-[18px] px-20">Dear customer to register your insurance you need to speak with our agent for proper registration on your insurance plan.</p>
+              <p className="text-[18px] lg:px-20">Dear customer to register your insurance you need to speak with our agent for proper registration on your insurance plan.</p>
               <button onClick={() => setForm(true)} className="border border-[#316721] text-[#316721] mt-5 px-5 py-3 rounded-3xl">Send us a message</button>  
             </>
           ) :
@@ -80,7 +80,7 @@ const index = () => {
       </section>
 
       <section className="mt-20">
-          <div class="grid grid-cols-3 gap-4">
+          <div class="lg:grid space-y-5 grid-cols-3 gap-4">
             {packages.map((pac, i) => (
               <div className="border rounded-xl">
                 <div className={` ${pac.name === 'Golden' ? 'bg-[#935216]' : pac.name === 'Platinum' ? 'bg-[#163D76]' : 'bg-[#049793]'} text-center text-white rounded-t-xl`} >
