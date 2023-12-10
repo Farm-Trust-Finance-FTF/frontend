@@ -52,7 +52,7 @@ const index = () => {
           <div class="grid grid-cols-3 gap-4">
             {packages.map((pac, i) => (
               <div className="border rounded-xl">
-                <div className={`bg-[${pac.color}] text-center text-white rounded-t-xl`} >
+                <div className={` ${pac.name === 'Golden' ? 'bg-[#935216]' : pac.name === 'Platinum' ? 'bg-[#163D76]' : 'bg-[#049793]'} text-center text-white rounded-t-xl`} >
                   <h1 className="font-fira text-[32px]">{pac.name}</h1>
                 </div>
                 <div className="py-8 px-10 ">

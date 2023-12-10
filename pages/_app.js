@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
@@ -48,7 +49,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: "FarmTrustFinance",
-  projectId: "4c0ff852eb2c84659a24b7d7c8335bc1",
+  projectId: "1q0S1Io7KIpu9gUvwhwXVZEmO5lvYMga",
   chains,
 });
 
@@ -60,7 +61,10 @@ const wagmiConfig = createConfig({
 
 function App({ Component, pageProps }) {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Insurance for Farmers</title>
+      </Head>
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           chains={chains}
@@ -75,7 +79,7 @@ function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </RainbowKitProvider>
       </WagmiConfig>
-    </div>
+    </>
   );
 }
 
