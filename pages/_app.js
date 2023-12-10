@@ -22,11 +22,13 @@ import {
   polygonMumbai,
   baseGoerli,
   sepolia,
+  avalancheFuji,
 } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, publicClient } = configureChains(
   [
+    avalancheFuji,
     mainnet,
     polygon,
     optimism,
