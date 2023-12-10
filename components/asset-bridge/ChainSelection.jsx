@@ -32,8 +32,6 @@ const ChainSelection = () => {
       try {
         const receiveCoinCode = selectedOptions.receiveCoin?.tag;
         const payCoinCode = selectedOptions.payCoin?.tag;
-        console.log(receiveCoinCode);
-        console.log(payCoinCode);
 
         if (
           pay === undefined ||
