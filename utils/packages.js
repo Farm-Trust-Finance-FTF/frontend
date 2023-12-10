@@ -2,7 +2,7 @@ export const packages = [
   {
     name: 'Golden',
     desc: 'Golden assurerance',
-    amount: 2000,
+    amount: 200,
     text: 'Annualy',
     includes: [
       'Safey',
@@ -13,7 +13,7 @@ export const packages = [
   {
     name: 'Platinum',
     desc: 'Platinum assurerance',
-    amount: 3000,
+    amount: 300,
     text: 'Annualy',
     includes: [
       'Safey',
@@ -24,7 +24,7 @@ export const packages = [
   {
     name: 'Silver',
     desc: 'Silver assurerance',
-    amount: 1000,
+    amount: 100,
     text: 'Annualy',
     includes: [
       'Safey',
