@@ -19,6 +19,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "public/icons/wallet/index.js", "public/icons/coins/index.js"],
   "exclude": ["node_modules"]
 }
