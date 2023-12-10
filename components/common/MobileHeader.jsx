@@ -16,7 +16,9 @@ function MobileHeader() {
           <div className='flex justify-between'>
             {/* Logo and search bar */}
             <div className='flex space-x-5'>
+            <Link href="/">
               <Logo />
+            </Link>
               <div className='pt-1 flex'>
               </div>
             </div>
