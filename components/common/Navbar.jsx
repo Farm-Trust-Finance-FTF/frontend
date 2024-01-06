@@ -10,8 +10,17 @@ function Navbar() {
       <Link className="cursor-pointer" href="/">
         <Logo />
       </Link>
-      <div className="flex space-x-10  font-bold ">
-        <h1>About</h1>
+      <div className="flex space-x-10 font-bold ">
+        <Link
+          className={
+            router.pathname.includes("about")
+              ? "border-b-2 border-[#87C232] cursor-pointer"
+              : ""
+          }
+          href="about"
+        >
+          About
+        </Link>
         <h1>Contact</h1>
         <Link
           className={
